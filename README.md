@@ -15,6 +15,25 @@ Code based on the [pdfsign](http://podofo.sourceforge.net) example.
 
 **TODO**: return status object.
 
+Minimum parameters to sign a PDF:
+
+* `in` (platform path)
+* `out` (platform path, must not be the same as `in`)
+* `cert` or `certFile` (PEM format)
+* `key` or `keyFile` (PEM format)
+* `reason`
+
+Optional:
+
+* `field`
+* `replace`
+
+A digital sign is invisible.
+
+Annotations are useful to indicate the nature of the signature(s).
+
+See example below for optional parameters to add annotations.
+
 ### Syntax
 
 ```4d
