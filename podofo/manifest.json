@@ -1,0 +1,12 @@
+{
+    "name": "podofo",
+    "id": 20000,
+    "commands": [
+        {
+            "theme": "podofo",
+            "syntax": "podofosign(&J):J",
+            "threadSafe": true
+        }
+    ]
+}
+
