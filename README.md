@@ -13,7 +13,9 @@ Sign PDF with PoDoFo 0.9.6
 
 Code based on the [pdfsign](http://podofo.sourceforge.net) example. 
 
-### Syntac
+**TODO**: return status object.
+
+### Syntax
 
 ```4d
 $in:=Folder(fk resources folder).file("TEST.pdf")
