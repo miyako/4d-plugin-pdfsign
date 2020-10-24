@@ -47,7 +47,7 @@ $params.out:=$out.platformPath
 
 $params.password:=""  //password to unlock the private key file
 $params.reason:="I agree! 同意します"  //the reason of the signature (unicode aware)
-$params.field:="signature"  //field name to use; defaults toPoDoFoSignatureFieldXXX, where XXX is the object number
+$params.field:="signature"  //field name to use; defaults to PoDoFoSignatureFieldXXX, where XXX is the object number
 $params.replace:=True  //whether to use existing signature field, if such named exists; the field type should be a signature
 $params.page:=1  //1-based page index
 
