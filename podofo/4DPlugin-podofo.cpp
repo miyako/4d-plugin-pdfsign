@@ -890,7 +890,11 @@ void podofosign(PA_PluginParameters params) {
 #if VERSIONMAC
                                                         image.LoadFromFile(image_file);
 #else
-                                                        image.LoadFromFile(image_file);//TODO: use wchar_t
+                                                        wchar_t    buf[_MAX_PATH];
+                                                        if(MultiByteToWideChar(CP_UTF8, 0, (LPCCH)image_file, -1, (LPWSTR)buf, _MAX_PATH))
+                                                        {
+                                                            image.LoadFromFile((const wchar_t *)buf);
+                                                        }
 #endif
                                                         double dScaleX = image_width / image.GetWidth();
                                                         double dScaleY = image_height / image.GetHeight();
