@@ -17,7 +17,7 @@ Code based on the [pdfsign](http://podofo.sourceforge.net) example.
 
 ### Remarks
 
-* RFC 3161 Timestamp Server is not supported; the timestamp of the computer is used.
+* RFC 3161 Timestamp is not supported; the timestamp of the computer is used.
 
 ### Related Projects
 
