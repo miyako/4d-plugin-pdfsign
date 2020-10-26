@@ -19,6 +19,10 @@ Code based on the [pdfsign](http://podofo.sourceforge.net) example.
 
 * RFC 3161 Timestamp Server is not supported; the timestamp of the computer is used.
 
+### Related Projects
+
+* [4d-plugin-sign-pdf-versy](https://github.com/miyako/4d-plugin-sign-pdf-versy)
+
 Minimum parameters to sign a PDF:
 
 * `in` (platform path)
