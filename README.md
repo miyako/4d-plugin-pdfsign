@@ -23,6 +23,8 @@ Code based on the [pdfsign](http://podofo.sourceforge.net) example.
 
 * [4d-plugin-sign-pdf-versy](https://github.com/miyako/4d-plugin-sign-pdf-versy)
 
+* [4d-plugin-timestamp-client](https://github.com/miyako/4d-plugin-timestamp-client)
+
 Minimum parameters to sign a PDF:
 
 * `in` (platform path)
