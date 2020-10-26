@@ -15,6 +15,10 @@ Code based on the [pdfsign](http://podofo.sourceforge.net) example.
 
 **TODO**: return status object.
 
+### Remarks
+
+* RFC 3161 Timestamp Server is not supported; the timestamp of the computer is used.
+
 Minimum parameters to sign a PDF:
 
 * `in` (platform path)
