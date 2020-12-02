@@ -13,6 +13,16 @@ Code based on the [pdfsign](http://podofo.sourceforge.net) example.
 
 **TODO**: return status object.
 
+### Remarks
+
+* RFC 3161 Timestamp is not supported; the timestamp of the computer is used.
+
+### Related Projects
+
+* [4d-plugin-sign-pdf-versy](https://github.com/miyako/4d-plugin-sign-pdf-versy)
+
+* [4d-plugin-timestamp-client](https://github.com/miyako/4d-plugin-timestamp-client)
+
 Minimum parameters to sign a PDF:
 
 * `in` (platform path)
@@ -44,10 +54,10 @@ $params.in:=$in.platformPath
 $params.out:=$out.platformPath
 
 $params.password:=""  //password to unlock the private key file
-$params.reason:="I agree"  //the reason of the signature
-$params.field:="signature"  //field name to use; defaults toPoDoFoSignatureFieldXXX, where XXX is the object number
+$params.reason:="I agree! 同意します"  //the reason of the signature (unicode aware)
+$params.field:="signature"  //field name to use; defaults to PoDoFoSignatureFieldXXX, where XXX is the object number
 $params.replace:=True  //whether to use existing signature field, if such named exists; the field type should be a signature
-$params.page:=1
+$params.page:=1  //1-based page index
 
 $params.annotation:=New object
 $params.annotation.unit:="mm"
@@ -58,27 +68,41 @@ $params.annotation.height:=100
 
 $params.annotation.images:=New collection
 $params.annotation.images[0]:=New object
-$params.annotation.images[0].x:=5
+$params.annotation.images[0].x:=250
 $params.annotation.images[0].y:=5
-$params.annotation.images[0].width:=60
-$params.annotation.images[0].height:=60
+$params.annotation.images[0].width:=10
+$params.annotation.images[0].height:=10
 $params.annotation.images[0].unit:="mm"
 $params.annotation.images[0].file:=Folder(fk resources folder).file("4D.png").platformPath
 
 $params.annotation.labels:=New collection
 $params.annotation.labels[0]:=New object
 $params.annotation.labels[0].x:=5
-$params.annotation.labels[0].y:=55
+$params.annotation.labels[0].y:=145
 $params.annotation.labels[0].width:=5
 $params.annotation.labels[0].height:=55
 $params.annotation.labels[0].font:="Helvetica"
 $params.annotation.labels[0].font_size:=5
 $params.annotation.labels[0].unit:="mm"
-$params.annotation.labels[0].text:="宮古ケイスケが\r"+Timestamp+"\rに署名！"
+$params.annotation.labels[0].text:="signed by miyako on"  //podofo does not support unicode string; sorry about that!
 $params.annotation.labels[0].font_color:=New object
 $params.annotation.labels[0].font_color.red:=0
 $params.annotation.labels[0].font_color.green:=0
 $params.annotation.labels[0].font_color.blue:=1
+
+$params.annotation.labels[1]:=New object
+$params.annotation.labels[1].x:=5
+$params.annotation.labels[1].y:=165
+$params.annotation.labels[1].width:=5
+$params.annotation.labels[1].height:=55
+$params.annotation.labels[1].font:="Helvetica"
+$params.annotation.labels[1].font_size:=5
+$params.annotation.labels[1].unit:="mm"
+$params.annotation.labels[1].text:=Timestamp  //podofo does not support unicode string; sorry about that!
+$params.annotation.labels[1].font_color:=New object
+$params.annotation.labels[1].font_color.red:=1
+$params.annotation.labels[1].font_color.green:=0
+$params.annotation.labels[1].font_color.blue:=0
 
 $key:=Folder(fk resources folder).file("key.pem")
 $cert:=Folder(fk resources folder).file("cert.pem")
