@@ -2,7 +2,6 @@
 ![version](https://img.shields.io/badge/version-17%2B-3E8B93)
 [![license](https://img.shields.io/github/license/miyako/4d-plugin-pdfsign)](LICENSE)
 ![downloads](https://img.shields.io/github/downloads/miyako/4d-plugin-pdfsign/total)
-![deprecated](https://img.shields.io/badge/-deprecated-808080)
 
 # 4d-plugin-pdfsign
 Sign PDF with PoDoFo 0.9.6
